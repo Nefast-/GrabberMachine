@@ -16,16 +16,33 @@
 #define ENUMS_H
 
 // -- Pin attributions --
-const int buttonPin = 2;  // playButton
 
+// -- Buttons --
+const int playButtonPin   = 2;
+const int xLimitSwitchPin = 3;
+const int yLimitSwitchPin = 4;
+
+// -- Motors --
+const int xStepPin = 5;
+const int xDirPin  = 7;
+const int yStepPin = 6;
+const int yDirPin  = 8;
+const int zPin     = 9;
+const int rzPin    = A0;
+
+// -- Enums & others constants--
 
 // -- Working modes --
-enum modes
+enum modesEnum
 {
+  INIT,
   READY,
   MOVE_X,
+  WAITING,
   MOVE_Y,
   GRAB_AND_RELEASE
 };
+
+const int maxMotorSpeed = 1000;
 
 #endif // ENUMS_H

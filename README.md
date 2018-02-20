@@ -10,5 +10,8 @@
 - 1 Axis driven by a DC motor (*z*)
 - 1 Grabber driven by a servo motor (*rz*)
 
- ## Software flowchart
+ ## (ugly) Software flowchart
  ![flowchart](./ress/flowchart.svg)
+
+ ## Some project pictures
+ ![Bench](./ress/firstBench.jpg)
