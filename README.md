@@ -14,4 +14,4 @@
  ![flowchart](./ress/flowchart.svg)
 
  ## Some project pictures
- ![Bench](./ress/firstBench.jpg)
+ ![Bench](./ress/photos/firstBench.jpg)
