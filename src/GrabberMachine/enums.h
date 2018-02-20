@@ -27,7 +27,8 @@ const int xStepPin = 5;
 const int xDirPin  = 7;
 const int yStepPin = 6;
 const int yDirPin  = 8;
-const int zPin     = 9;
+const int zPin1    = 9;
+const int zPin2    = 10;
 const int rzPin    = A0;
 
 // -- Enums & others constants--
@@ -42,7 +43,5 @@ enum modesEnum
   MOVE_Y,
   GRAB_AND_RELEASE
 };
-
-const int maxMotorSpeed = 1000;
 
 #endif // ENUMS_H

@@ -55,5 +55,3 @@ modesEnum getNextMode(modesEnum &current)
 }
 
 #endif // HELPERS_H
-
-

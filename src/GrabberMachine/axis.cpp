@@ -63,4 +63,3 @@ bool Axis::atEnd()
 {
   return !digitalRead(_limitSwitchPin); // inverted return because of pullup mode.
 }
-

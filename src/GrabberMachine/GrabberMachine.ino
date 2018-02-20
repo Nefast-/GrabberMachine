@@ -12,27 +12,21 @@
   See file LICENSE for further informations on licensing terms.
 */
 
-#include <Servo.h> // TODO : Move this to class
 #include "helpers.h"
 #include "axis.h"
+#include "grabber.h"
 
-Servo grabber; // TODO : Move this to class
 Axis X(xStepPin, xDirPin, xLimitSwitchPin);
 Axis Y(yStepPin, yDirPin, yLimitSwitchPin);
+Grabber grabber(zPin1, zPin2, rzPin, 20, 180);
 modesEnum currentMode = INIT;
 
 void setup()
 {
-  //-- TODO : Move this to class --
-  pinMode(zPin, OUTPUT);
-  grabber.attach(rzPin);
-  grabber.write(20); // init to real zero
-  //-- END TODO --
-
   pinMode(playButtonPin, INPUT_PULLUP);
+  grabber.init();
   Y.init();
   X.init();
-
   currentMode = READY;
 }
 
@@ -60,25 +54,10 @@ void loop()
       } break;
     case GRAB_AND_RELEASE :
       {
-        // TODO : Implement Grab and release sequence with class
-        // TODO : Find something for invert Z axis
-
-        digitalWrite(zPin, HIGH);
-        delay(2000);
-        digitalWrite(zPin, LOW);
-
-        grabber.write(179);
-        delay(1000);
-
-        digitalWrite(zPin, HIGH);
-        delay(2000);
-        digitalWrite(zPin, LOW);
-
-        
-        Y.init();
+        grabber.grab();
         X.init();
-        grabber.write(0);
-        delay(3000);
+        Y.init();
+        grabber.release();
         currentMode = READY;
       } break;
   }

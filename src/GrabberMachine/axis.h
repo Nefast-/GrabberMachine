@@ -35,12 +35,11 @@ class Axis
     bool atEnd();
 
   private :
-    bool _init = false;
     int _stepPin;
     int _dirPin;
     int _limitSwitchPin;
     int _speed = 500;
-    AccelStepper *_motor;
+    AccelStepper *_motor = nullptr;
 };
 
 #endif // AXIS_H
